@@ -69,14 +69,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block lg:col-span-5 relative h-[420px]">
-          <div className="absolute top-6 right-2 px-3 py-1.5 rounded-full bg-[#5885C9] text-white text-xs shadow-md backdrop-blur">
-            1ère année
-          </div>
-          <div className="absolute bottom-10 right-10 px-3 py-1.5 rounded-full bg-white/90 text-[#0F2A5E] text-xs shadow-md border border-[#0F2A5E]/10 backdrop-blur">
-            MMI · Arles
-          </div>
-        </div>
+        <div className="hidden lg:block lg:col-span-5 relative h-[420px]" />
       </div>
 
       <div className="absolute bottom-8 inset-x-0 grid place-items-center text-[#0F2A5E]/60 scroll-indicator z-10">
