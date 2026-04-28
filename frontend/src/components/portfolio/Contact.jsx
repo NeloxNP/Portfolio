@@ -1,66 +1,45 @@
-import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
-import { Mail, Linkedin, Send, CheckCircle2, Youtube } from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import { Mail, Linkedin, Youtube, ArrowUpRight } from "lucide-react";
 import { profile } from "../../mock";
 import Waves from "./Waves";
-import { useToast } from "../../hooks/use-toast";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Contact = () => {
   const ref = useRef(null);
-  const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const els = ref.current?.querySelectorAll(".fade-in-up") || [];
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in-view")),
+      (entries) =>
+        entries.forEach((e) => e.isIntersecting && e.target.classList.add("in-view")),
       { threshold: 0.1 }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      toast({
-        title: "Champs manquants",
-        description: "Merci de remplir nom, email et message.",
-      });
-      return;
-    }
-    setLoading(true);
-    try {
-      await axios.post(`${API}/contact`, {
-        name: form.name.trim(),
-        email: form.email.trim(),
-        message: form.message.trim(),
-      });
-      setLoading(false);
-      setSent(true);
-      toast({
-        title: "Message envoyé ✨",
-        description: "Merci ! Je reviens vers vous très vite.",
-      });
-      setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setSent(false), 4000);
-    } catch (err) {
-      setLoading(false);
-      const detail =
-        err?.response?.data?.detail ||
-        "Impossible d'envoyer pour l'instant. Réessayez dans un instant.";
-      toast({
-        title: "Oups, une erreur",
-        description: typeof detail === "string" ? detail : "Erreur d'envoi",
-      });
-    }
-  };
+  const channels = [
+    {
+      label: "Email",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+      icon: Mail,
+      tone: "primary",
+    },
+    {
+      label: "LinkedIn",
+      value: "/in/gabriel-anderlucci",
+      href: profile.linkedin,
+      icon: Linkedin,
+      tone: "soft",
+    },
+    {
+      label: "CV Vidéo",
+      value: "À voir sur YouTube",
+      href: profile.cvVideo,
+      icon: Youtube,
+      tone: "soft",
+    },
+  ];
 
   return (
     <section
@@ -70,141 +49,82 @@ const Contact = () => {
     >
       <Waves variant="top" palette="mauve" />
       <div className="absolute -bottom-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#9F85DD]/20 blur-3xl pointer-events-none" />
+      <div className="absolute -top-10 -left-10 w-[340px] h-[340px] rounded-full bg-[#9F85DD]/15 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-5 fade-in-up">
-          <h2 className="font-serif-display text-[#452573] text-4xl md:text-5xl leading-[1.05]">
-            On se parle&nbsp;?
-          </h2>
-          <p className="mt-5 text-[#452573]/80 text-base leading-relaxed max-w-md">
-            Contactez-moi pour mon stage de juin, pour me recruter, ou simplement
-            pour échanger autour d'un projet. Je réponds à chaque message.
-          </p>
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-10 text-center fade-in-up">
+        <h2 className="font-serif-display text-[#452573] text-4xl md:text-6xl leading-[1.05]">
+          On se parle&nbsp;?
+        </h2>
+        <p className="mt-6 text-[#452573]/85 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          Contactez-moi pour mon stage de juin, pour me recruter, ou simplement
+          pour échanger autour d'un projet. Je réponds à chaque message.
+        </p>
+      </div>
 
-          <div className="mt-8 space-y-4">
-            <a
-              href={`mailto:${profile.email}`}
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-white/75 backdrop-blur border border-[#452573]/10 hover:bg-white transition-colors"
-            >
-              <span className="w-11 h-11 rounded-xl bg-[#452573] text-white grid place-items-center">
-                <Mail size={18} />
-              </span>
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-[#452573]/55">
-                  Email
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-10 mt-14 md:mt-20">
+        <div className="grid sm:grid-cols-3 gap-5 md:gap-6 fade-in-up">
+          {channels.map((c) => {
+            const Icon = c.icon;
+            const isPrimary = c.tone === "primary";
+            const base =
+              "group relative flex flex-col items-start gap-5 p-6 md:p-7 rounded-3xl border transition-all duration-500 hover:-translate-y-1 hover:shadow-xl";
+            const styles = isPrimary
+              ? "bg-[#452573] text-white border-transparent hover:bg-[#5B3589]"
+              : "bg-white/85 backdrop-blur text-[#452573] border-[#452573]/10 hover:bg-white";
+            const iconWrap = isPrimary
+              ? "bg-white/15 text-white"
+              : "bg-[#452573] text-white";
+            return (
+              <a
+                key={c.label}
+                href={c.href}
+                target={c.href.startsWith("mailto:") ? "_self" : "_blank"}
+                rel={
+                  c.href.startsWith("mailto:") ? undefined : "noopener noreferrer"
+                }
+                className={`${base} ${styles}`}
+              >
+                <div className="flex items-center justify-between w-full">
+                  <span
+                    className={`w-12 h-12 rounded-2xl grid place-items-center ${iconWrap}`}
+                  >
+                    <Icon size={20} />
+                  </span>
+                  <ArrowUpRight
+                    size={18}
+                    className={`opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ${
+                      isPrimary ? "text-white" : "text-[#452573]"
+                    }`}
+                  />
                 </div>
-                <div className="text-[#452573] font-medium group-hover:text-[#9F85DD] transition-colors">
-                  {profile.email}
+                <div>
+                  <div
+                    className={`text-[10px] uppercase tracking-[0.25em] mb-2 ${
+                      isPrimary ? "text-white/70" : "text-[#452573]/55"
+                    }`}
+                  >
+                    {c.label}
+                  </div>
+                  <div
+                    className={`font-serif-display leading-tight break-words ${
+                      c.label === "Email"
+                        ? "text-base md:text-lg lg:text-xl"
+                        : "text-xl md:text-2xl"
+                    } ${isPrimary ? "text-white" : "text-[#452573]"}`}
+                  >
+                    {c.value}
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-white/75 backdrop-blur border border-[#452573]/10 hover:bg-white transition-colors"
-            >
-              <span className="w-11 h-11 rounded-xl bg-[#9F85DD] text-white grid place-items-center">
-                <Linkedin size={18} />
-              </span>
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-[#452573]/55">
-                  LinkedIn
-                </div>
-                <div className="text-[#452573] font-medium group-hover:text-[#9F85DD] transition-colors">
-                  /in/gabriel-anderlucci
-                </div>
-              </div>
-            </a>
-            <a
-              href={profile.cvVideo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-[#452573] text-white hover:bg-[#5B3589] transition-colors shadow-md"
-            >
-              <span className="w-11 h-11 rounded-xl bg-white/15 grid place-items-center">
-                <Youtube size={20} />
-              </span>
-              <div className="flex-1">
-                <div className="text-[10px] uppercase tracking-[0.2em] text-white/65">
-                  À découvrir
-                </div>
-                <div className="font-medium">Voir mon CV vidéo</div>
-              </div>
-              <span className="text-xs text-white/70 group-hover:translate-x-0.5 transition-transform">
-                ↗
-              </span>
-            </a>
-          </div>
+              </a>
+            );
+          })}
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          className="lg:col-span-7 bg-white/85 backdrop-blur border border-[#452573]/10 rounded-3xl p-6 md:p-10 shadow-sm fade-in-up"
-        >
-          <div className="grid md:grid-cols-2 gap-5">
-            <div>
-              <label className="block text-xs uppercase tracking-[0.2em] text-[#452573]/60 mb-2">
-                Nom
-              </label>
-              <input
-                name="name"
-                value={form.name}
-                onChange={onChange}
-                placeholder="Votre nom"
-                className="w-full px-4 py-3 rounded-xl bg-white border border-[#452573]/15 text-[#452573] placeholder:text-[#452573]/35 focus:outline-none focus:border-[#9F85DD] focus:ring-2 focus:ring-[#9F85DD]/25 transition"
-              />
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-[0.2em] text-[#452573]/60 mb-2">
-                Email
-              </label>
-              <input
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={onChange}
-                placeholder="vous@exemple.com"
-                className="w-full px-4 py-3 rounded-xl bg-white border border-[#452573]/15 text-[#452573] placeholder:text-[#452573]/35 focus:outline-none focus:border-[#9F85DD] focus:ring-2 focus:ring-[#9F85DD]/25 transition"
-              />
-            </div>
-          </div>
-          <div className="mt-5">
-            <label className="block text-xs uppercase tracking-[0.2em] text-[#452573]/60 mb-2">
-              Message
-            </label>
-            <textarea
-              name="message"
-              rows={6}
-              value={form.message}
-              onChange={onChange}
-              placeholder="Parlez-moi de votre projet, de votre entreprise, ou simplement venez dire bonjour…"
-              className="w-full px-4 py-3 rounded-xl bg-white border border-[#452573]/15 text-[#452573] placeholder:text-[#452573]/35 focus:outline-none focus:border-[#9F85DD] focus:ring-2 focus:ring-[#9F85DD]/25 transition resize-none"
-            />
-          </div>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-xs text-[#452573]/55">
-              Vos infos restent privées. Je vous réponds en moins de 48 h.
-            </p>
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-shine inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#452573] text-white text-sm font-medium hover:bg-[#5B3589] transition-colors disabled:opacity-60"
-            >
-              {sent ? (
-                <>
-                  <CheckCircle2 size={16} />
-                  Envoyé
-                </>
-              ) : (
-                <>
-                  {loading ? "Envoi…" : "Envoyer le message"}
-                  <Send size={16} />
-                </>
-              )}
-            </button>
-          </div>
-        </form>
+        <div className="mt-14 text-center fade-in-up">
+          <p className="text-[#452573]/65 text-sm font-serif-display italic">
+            Je réponds en moins de 48 heures.
+          </p>
+        </div>
       </div>
     </section>
   );
