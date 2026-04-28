@@ -8,10 +8,27 @@ const Hero = () => {
     <section id="top" className="relative pt-28 md:pt-36 pb-32 md:pb-44 overflow-hidden">
       <Waves variant="block" />
       {/* soft blue blobs */}
-      <div className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#5885C9]/20 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-24 w-[320px] h-[320px] rounded-full bg-[#9AC0EB]/30 blur-3xl pointer-events-none" />
+      <div className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#5885C9]/20 blur-3xl pointer-events-none z-[1]" />
+      <div className="absolute top-1/2 -left-24 w-[320px] h-[320px] rounded-full bg-[#9AC0EB]/30 blur-3xl pointer-events-none z-[1]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+      {/* IUT building backdrop on the right — desaturated, semi-transparent, fading into the background on the left */}
+      <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[62%] md:w-[55%] lg:w-[50%] pointer-events-none overflow-hidden z-[2]">
+        <img
+          src="https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/b70vzpb9_IUT_2026-04-28_14_48_42.165196.webp"
+          alt="IUT d'Arles - BUT MMI"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            filter: "saturate(0.35) brightness(1.05) contrast(0.95)",
+            opacity: 0.62,
+            maskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 18%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,1) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 18%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center z-10">
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 backdrop-blur border border-[#0F2A5E]/10 text-[#0F2A5E]/80 text-xs tracking-wide">
             <Sparkles size={14} className="text-[#5885C9]" />
@@ -52,21 +69,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-5 relative">
-          <div className="relative mx-auto w-[280px] h-[280px] md:w-[360px] md:h-[360px]">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C9DEF6] to-[#9AC0EB] blur-2xl opacity-70" />
-            <div className="relative w-full h-full rounded-full bg-white/70 backdrop-blur border border-white/80 shadow-xl grid place-items-center float-slow">
-              <span className="font-serif-display text-[#0F2A5E] text-[110px] md:text-[150px] leading-none">
-                {profile.initials}
-              </span>
-            </div>
-            {/* small accents */}
-            <div className="absolute -top-4 -right-2 px-3 py-1.5 rounded-full bg-[#5885C9] text-white text-xs shadow-md">
-              1ère année
-            </div>
-            <div className="absolute -bottom-2 -left-4 px-3 py-1.5 rounded-full bg-white text-[#0F2A5E] text-xs shadow-md border border-[#0F2A5E]/10">
-              MMI · Arles
-            </div>
+        <div className="hidden lg:block lg:col-span-5 relative h-[420px]">
+          <div className="absolute top-6 right-2 px-3 py-1.5 rounded-full bg-[#5885C9] text-white text-xs shadow-md backdrop-blur">
+            1ère année
+          </div>
+          <div className="absolute bottom-10 right-10 px-3 py-1.5 rounded-full bg-white/90 text-[#0F2A5E] text-xs shadow-md border border-[#0F2A5E]/10 backdrop-blur">
+            MMI · Arles
           </div>
         </div>
       </div>
