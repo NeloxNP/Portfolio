@@ -37,7 +37,16 @@ const Interests = () => {
         <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {interests.map((it, i) => {
             const Icon = iconMap[it.icon] || Film;
-            const accent = i % 3 === 0 ? "#9F85DD" : i % 3 === 1 ? "#7A5DB8" : "#452573";
+            // Palette chaleureuse et variée : bordeaux, vert sapin, ocre, vert olive, bleu canard, terracotta
+            const palette = [
+              "#8B3A3A", // Cinéma — bordeaux
+              "#2D5F3F", // Jeux Vidéo — vert sapin
+              "#C99A2E", // Culture — ocre / jaune moutarde
+              "#6B7239", // Sport — vert olive
+              "#2B5F6F", // Photographie — bleu canard
+              "#C25B3F", // Voyages — terracotta
+            ];
+            const accent = palette[i % palette.length];
             return (
               <div
                 key={it.title}

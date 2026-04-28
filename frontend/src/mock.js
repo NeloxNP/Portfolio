@@ -36,7 +36,7 @@ export const projects = [
     year: "2025",
     category: "Design · Vidéo",
     description:
-      "Réalisation d'une affiche et d'un court-métrage promotionnel pour le Salon du Jeu Vidéo d'Arles. Direction artistique, tournage et montage.",
+      "Affiche et court-métrage réalisés dans le cadre d'un concours pour le Salon du Jeu Vidéo d'Arles. Direction artistique, tournage et montage.",
     tags: ["Affiche", "Court-métrage", "Direction artistique"],
     accent: "rose",
     media: {
@@ -90,8 +90,8 @@ export const projects = [
     media: {
       type: "gallery-link",
       images: [
-        "https://placehold.co/1200x750/EAF3FB/0F2A5E?text=Pokedexia+%E2%80%93+Accueil&font=playfair-display",
-        "https://placehold.co/1200x750/DCE9F6/0F2A5E?text=Pokedexia+%E2%80%93+Fiche+Pok%C3%A9mon&font=playfair-display",
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/vmnkn0xj_image%20%283%29.png",
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/iqb3ozrm_image%20%284%29.png",
       ],
       cta: { label: "Visiter Pokedexia", url: "https://but-mmi.github.io/Pokedexia/" },
     },
@@ -109,8 +109,8 @@ export const projects = [
     media: {
       type: "gallery",
       images: [
-        "https://placehold.co/1200x750/EAF3FB/0F2A5E?text=Crousty+Movies+%E2%80%93+Catalogue&font=playfair-display",
-        "https://placehold.co/1200x750/DCE9F6/0F2A5E?text=Crousty+Movies+%E2%80%93+Fiche+Film&font=playfair-display",
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/h4x8r24t_image%20%285%29.png",
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/0yk2opr8_image%20%286%29.png",
       ],
     },
   },
