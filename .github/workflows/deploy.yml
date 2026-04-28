@@ -34,11 +34,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "yarn"
-          cache-dependency-path: frontend/yarn.lock
 
       - name: Installation des dépendances
-        run: yarn install --frozen-lockfile
+        run: yarn install --network-timeout 600000
 
       - name: Construction du site
         env:
