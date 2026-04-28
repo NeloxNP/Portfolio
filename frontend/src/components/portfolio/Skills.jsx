@@ -45,7 +45,7 @@ const Skills = () => {
                     key={it}
                     className="flex items-center gap-2.5 text-[#0F2A5E]/80 text-[15px]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C88AA0]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5885C9]" />
                     {it}
                   </li>
                 ))}

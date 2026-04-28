@@ -26,7 +26,7 @@ const Footer = () => {
               D'avoir pris le temps de parcourir mon univers. À très vite,
               j'espère&nbsp;!
             </p>
-            <div className="mt-6 font-serif-display italic text-2xl text-[#C88AA0]">
+            <div className="mt-6 font-serif-display italic text-2xl text-[#9AC0EB]">
               — {profile.firstName} {profile.lastName}
             </div>
           </div>
@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="mt-4 space-y-3 text-sm">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-2.5 hover:text-[#C88AA0] transition-colors"
+                className="flex items-center gap-2.5 hover:text-[#9AC0EB] transition-colors"
               >
                 <Mail size={16} /> {profile.email}
               </a>
@@ -59,7 +59,7 @@ const Footer = () => {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 hover:text-[#C88AA0] transition-colors"
+                className="flex items-center gap-2.5 hover:text-[#9AC0EB] transition-colors"
               >
                 <Linkedin size={16} /> LinkedIn
               </a>

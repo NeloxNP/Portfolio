@@ -7,14 +7,14 @@ const Hero = () => {
   return (
     <section id="top" className="relative pt-28 md:pt-36 pb-32 md:pb-44 overflow-hidden">
       <Waves variant="block" />
-      {/* soft pink blob */}
-      <div className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#C88AA0]/20 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-24 w-[320px] h-[320px] rounded-full bg-[#5885C9]/20 blur-3xl pointer-events-none" />
+      {/* soft blue blobs */}
+      <div className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#5885C9]/20 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 -left-24 w-[320px] h-[320px] rounded-full bg-[#9AC0EB]/30 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 backdrop-blur border border-[#0F2A5E]/10 text-[#0F2A5E]/80 text-xs tracking-wide">
-            <Sparkles size={14} className="text-[#C88AA0]" />
+            <Sparkles size={14} className="text-[#5885C9]" />
             {profile.available}
           </div>
 
@@ -61,7 +61,7 @@ const Hero = () => {
               </span>
             </div>
             {/* small accents */}
-            <div className="absolute -top-4 -right-2 px-3 py-1.5 rounded-full bg-[#C88AA0] text-white text-xs shadow-md">
+            <div className="absolute -top-4 -right-2 px-3 py-1.5 rounded-full bg-[#5885C9] text-white text-xs shadow-md">
               1ère année
             </div>
             <div className="absolute -bottom-2 -left-4 px-3 py-1.5 rounded-full bg-white text-[#0F2A5E] text-xs shadow-md border border-[#0F2A5E]/10">

@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Waves from "./Waves";
 
 const accentMap = {
-  rose: { bg: "bg-[#C88AA0]", soft: "bg-[#C88AA0]/15", text: "text-[#C88AA0]" },
+  rose: { bg: "bg-[#7BA7D9]", soft: "bg-[#7BA7D9]/15", text: "text-[#7BA7D9]" },
   blue: { bg: "bg-[#5885C9]", soft: "bg-[#5885C9]/15", text: "text-[#5885C9]" },
   blueDeep: { bg: "bg-[#0F2A5E]", soft: "bg-[#0F2A5E]/10", text: "text-[#0F2A5E]" },
 };

@@ -17,15 +17,19 @@ const Interests = () => {
   }, []);
 
   return (
-    <section id="interests" ref={ref} className="relative py-24 md:py-32 bg-[#E8CEDC]/55">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section
+      id="interests"
+      ref={ref}
+      className="relative py-24 md:py-32 bg-[#E3DFF7]"
+    >
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in-up">
           <div>
-            <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
+            <h2 className="font-serif-display text-[#452573] text-4xl md:text-5xl">
               Mes intérêts
             </h2>
           </div>
-          <p className="max-w-lg text-[#0F2A5E]/75 text-base leading-relaxed">
+          <p className="max-w-lg text-[#452573]/75 text-base leading-relaxed">
             Ce qui me nourrit, m'inspire et me fait sortir des sentiers battus.
           </p>
         </div>
@@ -33,11 +37,11 @@ const Interests = () => {
         <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {interests.map((it, i) => {
             const Icon = iconMap[it.icon] || Film;
-            const accent = i % 3 === 0 ? "#C88AA0" : i % 3 === 1 ? "#5885C9" : "#0F2A5E";
+            const accent = i % 3 === 0 ? "#9F85DD" : i % 3 === 1 ? "#7A5DB8" : "#452573";
             return (
               <div
                 key={it.title}
-                className="fade-in-up group relative overflow-hidden rounded-2xl border border-[#0F2A5E]/10 bg-white/75 backdrop-blur p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500"
+                className="fade-in-up group relative overflow-hidden rounded-2xl border border-[#452573]/10 bg-white/75 backdrop-blur p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500"
               >
                 <div
                   className="absolute -right-10 -top-10 w-36 h-36 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-700"
@@ -49,10 +53,10 @@ const Interests = () => {
                 >
                   <Icon size={20} />
                 </div>
-                <h3 className="relative mt-5 font-serif-display text-[#0F2A5E] text-xl">
+                <h3 className="relative mt-5 font-serif-display text-[#452573] text-xl">
                   {it.title}
                 </h3>
-                <p className="relative mt-2 text-[#0F2A5E]/75 text-[15px] leading-relaxed">
+                <p className="relative mt-2 text-[#452573]/75 text-[15px] leading-relaxed">
                   {it.text}
                 </p>
               </div>
