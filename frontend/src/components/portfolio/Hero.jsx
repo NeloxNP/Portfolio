@@ -70,10 +70,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-8 inset-x-0 grid place-items-center text-[#0F2A5E]/60 scroll-indicator z-10">
-        <ArrowDown size={18} />
-      </div>
     </section>
   );
 };
