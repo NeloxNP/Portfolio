@@ -10,9 +10,11 @@ from typing import List
 import uuid
 from datetime import datetime, timezone
 
-
+# Load environment variables BEFORE importing contact module
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+
+from contact import get_contact_router
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -67,6 +69,7 @@ async def get_status_checks():
     return status_checks
 
 # Include the router in the main app
+api_router.include_router(get_contact_router(db))
 app.include_router(api_router)
 
 app.add_middleware(

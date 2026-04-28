@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import { Mail, Linkedin, Send, CheckCircle2, Youtube } from "lucide-react";
 import { profile } from "../../mock";
 import Waves from "./Waves";
 import { useToast } from "../../hooks/use-toast";
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Contact = () => {
   const ref = useRef(null);
@@ -23,7 +26,7 @@ const Contact = () => {
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({
@@ -33,10 +36,12 @@ const Contact = () => {
       return;
     }
     setLoading(true);
-    const stored = JSON.parse(localStorage.getItem("contact_messages") || "[]");
-    stored.push({ ...form, at: new Date().toISOString() });
-    localStorage.setItem("contact_messages", JSON.stringify(stored));
-    setTimeout(() => {
+    try {
+      await axios.post(`${API}/contact`, {
+        name: form.name.trim(),
+        email: form.email.trim(),
+        message: form.message.trim(),
+      });
       setLoading(false);
       setSent(true);
       toast({
@@ -45,7 +50,16 @@ const Contact = () => {
       });
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setSent(false), 4000);
-    }, 700);
+    } catch (err) {
+      setLoading(false);
+      const detail =
+        err?.response?.data?.detail ||
+        "Impossible d'envoyer pour l'instant. Réessayez dans un instant.";
+      toast({
+        title: "Oups, une erreur",
+        description: typeof detail === "string" ? detail : "Erreur d'envoi",
+      });
+    }
   };
 
   return (
