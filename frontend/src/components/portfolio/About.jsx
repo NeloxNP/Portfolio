@@ -16,7 +16,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={ref} className="relative py-24 md:py-32">
+    <section id="about" ref={ref} className="relative py-24 md:py-32 bg-[#EBD3DE]/45">
       <Waves variant="top" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 fade-in-up">

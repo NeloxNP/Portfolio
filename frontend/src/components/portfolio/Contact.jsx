@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 md:py-32 overflow-hidden">
+    <section id="contact" ref={ref} className="relative py-24 md:py-32 overflow-hidden bg-[#EBD3DE]/45">
       <Waves variant="top" />
       <div className="absolute -bottom-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#C88AA0]/15 blur-3xl pointer-events-none" />
 

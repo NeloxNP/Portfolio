@@ -17,7 +17,7 @@ const Interests = () => {
   }, []);
 
   return (
-    <section id="interests" ref={ref} className="relative py-24 md:py-32">
+    <section id="interests" ref={ref} className="relative py-24 md:py-32 bg-[#E8CEDC]/55">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in-up">
           <div>
