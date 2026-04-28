@@ -32,18 +32,18 @@ export const projects = [
     id: "salon-jv",
     title: "Salon du Jeu Vidéo d'Arles",
     subtitle: "Affiche & court-métrage",
-    year: "2024",
+    year: "2025",
     category: "Design · Vidéo",
     description:
       "Réalisation d'une affiche et d'un court-métrage promotionnel pour le Salon du Jeu Vidéo d'Arles. Direction artistique, tournage et montage.",
     tags: ["Affiche", "Court-métrage", "Direction artistique"],
-    accent: "violet",
+    accent: "rose",
   },
   {
     id: "box-della-mamma",
     title: "La Box Della Mamma",
     subtitle: "ApéroBox fictive aux saveurs d'Italie",
-    year: "2024",
+    year: "2025",
     category: "Branding · Communication",
     description:
       "Création complète d'une marque fictive d'ApéroBox italienne : charte graphique, identité, page Instagram, campagne de financement participatif et stratégie marketing.",
@@ -54,7 +54,7 @@ export const projects = [
     id: "pokedexia",
     title: "Pokedexia",
     subtitle: "Mon premier site web",
-    year: "2024",
+    year: "2025",
     category: "Développement · Design",
     description:
       "Un Pokédex interactif pour répertorier les Pokémon, consulter leurs types et leurs évolutions. Premier vrai projet de développement front-end.",
@@ -65,18 +65,18 @@ export const projects = [
     id: "crousty-movies",
     title: "Crousty Movies",
     subtitle: "Plateforme de cinéphiles",
-    year: "2024",
+    year: "2026",
     category: "Développement web",
     description:
       "Site dynamique pour répertorier des films, ajouter des commentaires, noter, voir les nouveautés et gérer la base depuis une interface admin.",
     tags: ["PHP", "SQL", "CSS"],
-    accent: "violet",
+    accent: "rose",
   },
   {
     id: "affiche-retro",
-    title: "De la musique seulement pour vous",
-    subtitle: "Affiche d'un objet rétro",
-    year: "2024",
+    title: "Affiche d'un objet rétro",
+    subtitle: "De la musique seulement pour vous",
+    year: "2026",
     category: "Design graphique",
     description:
       "Affiche rétro autour d'un Sony Walkman. Contraintes : aucune ombre, aplats de couleur uniquement et 6 couleurs maximum. Chaque détail compte.",
@@ -87,7 +87,7 @@ export const projects = [
     id: "dark-patterns",
     title: "Les Dark Patterns",
     subtitle: "Vidéo pédagogique",
-    year: "2024",
+    year: "2026",
     category: "Vidéo",
     description:
       "De l'écriture du synopsis au montage final, en passant par le scénario et le tournage. Un projet complet pour s'exprimer par l'image.",
@@ -108,14 +108,14 @@ export const interests = [
     icon: "Gamepad2",
   },
   {
-    title: "Italie & Gastronomie",
-    text: "Saveurs, traditions et art de vivre — mon projet Box Della Mamma en est un clin d'œil.",
-    icon: "Utensils",
+    title: "Culture",
+    text: "Mes origines italiennes me suivent partout : la langue, la cuisine, les traditions familiales et cette manière chaleureuse de raconter le monde.",
+    icon: "Globe2",
   },
   {
-    title: "Design rétro",
-    text: "Walkman, vinyles, polaroïds : un goût prononcé pour les objets et les graphismes vintage.",
-    icon: "Radio",
+    title: "Sport",
+    text: "Le foot avant tout : jouer, regarder les matchs, suivre les compétitions. Esprit d'équipe, dépassement et passion partagée.",
+    icon: "Trophy",
   },
   {
     title: "Photographie",
@@ -153,5 +153,4 @@ export const navLinks = [
   { label: "Projets", href: "#projects" },
   { label: "Intérêts", href: "#interests" },
   { label: "Compétences", href: "#skills" },
-  { label: "Contact", href: "#contact" },
 ];

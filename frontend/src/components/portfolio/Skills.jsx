@@ -19,10 +19,7 @@ const Skills = () => {
       <Waves variant="top" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-2xl fade-in-up">
-          <p className="text-[#9F7CC4] uppercase tracking-[0.25em] text-xs font-medium">
-            Section 04
-          </p>
-          <h2 className="mt-3 font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
+          <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
             Mes compétences
           </h2>
           <p className="mt-5 text-[#0F2A5E]/75 text-base leading-relaxed">
@@ -48,7 +45,7 @@ const Skills = () => {
                     key={it}
                     className="flex items-center gap-2.5 text-[#0F2A5E]/80 text-[15px]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#9F7CC4]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C88AA0]" />
                     {it}
                   </li>
                 ))}

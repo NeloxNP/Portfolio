@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { interests } from "../../mock";
-import { Film, Gamepad2, Utensils, Radio, Camera, Plane } from "lucide-react";
+import { Film, Gamepad2, Globe2, Trophy, Camera, Plane } from "lucide-react";
 
-const iconMap = { Film, Gamepad2, Utensils, Radio, Camera, Plane };
+const iconMap = { Film, Gamepad2, Globe2, Trophy, Camera, Plane };
 
 const Interests = () => {
   const ref = useRef(null);
@@ -21,10 +21,7 @@ const Interests = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in-up">
           <div>
-            <p className="text-[#9F7CC4] uppercase tracking-[0.25em] text-xs font-medium">
-              Section 03
-            </p>
-            <h2 className="mt-3 font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
+            <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
               Mes intérêts
             </h2>
           </div>
@@ -36,7 +33,7 @@ const Interests = () => {
         <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {interests.map((it, i) => {
             const Icon = iconMap[it.icon] || Film;
-            const accent = i % 3 === 0 ? "#9F7CC4" : i % 3 === 1 ? "#5885C9" : "#0F2A5E";
+            const accent = i % 3 === 0 ? "#C88AA0" : i % 3 === 1 ? "#5885C9" : "#0F2A5E";
             return (
               <div
                 key={it.title}

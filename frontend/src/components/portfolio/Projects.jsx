@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Waves from "./Waves";
 
 const accentMap = {
-  violet: { bg: "bg-[#9F7CC4]", soft: "bg-[#9F7CC4]/15", text: "text-[#9F7CC4]" },
+  rose: { bg: "bg-[#C88AA0]", soft: "bg-[#C88AA0]/15", text: "text-[#C88AA0]" },
   blue: { bg: "bg-[#5885C9]", soft: "bg-[#5885C9]/15", text: "text-[#5885C9]" },
   blueDeep: { bg: "bg-[#0F2A5E]", soft: "bg-[#0F2A5E]/10", text: "text-[#0F2A5E]" },
 };
@@ -73,16 +73,12 @@ const Projects = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in-up">
           <div>
-            <p className="text-[#9F7CC4] uppercase tracking-[0.25em] text-xs font-medium">
-              Section 02
-            </p>
-            <h2 className="mt-3 font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
+            <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl">
               Mes projets
             </h2>
           </div>
           <p className="max-w-lg text-[#0F2A5E]/75 text-base leading-relaxed">
-            Faire ce que l'on aime, ça motive à réaliser des choses qui rendent fier.
-            Voici quelques travaux dont je suis particulièrement fier.
+            Faire ce que l'on aime, ça pousse à se dépasser. Voici quelques travaux dont je suis particulièrement fier.
           </p>
         </div>
 

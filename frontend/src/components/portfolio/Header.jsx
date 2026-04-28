@@ -48,7 +48,7 @@ const Header = () => {
           href="#contact"
           className="hidden md:inline-flex btn-shine items-center gap-2 px-5 py-2.5 rounded-full bg-[#0F2A5E] text-[#EAF3FB] text-sm font-medium hover:bg-[#1A3B7C] transition-colors"
         >
-          Travailler ensemble
+          Contact
         </a>
 
         <button
@@ -80,7 +80,7 @@ const Header = () => {
                 onClick={() => setOpen(false)}
                 className="inline-block px-5 py-2.5 rounded-full bg-[#0F2A5E] text-[#EAF3FB] text-sm"
               >
-                Travailler ensemble
+                Contact
               </a>
             </li>
           </ul>

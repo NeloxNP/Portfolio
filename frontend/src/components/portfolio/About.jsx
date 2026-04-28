@@ -20,14 +20,14 @@ const About = () => {
       <Waves variant="top" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 fade-in-up">
-          <p className="text-[#9F7CC4] uppercase tracking-[0.25em] text-xs font-medium">
-            Section 01
-          </p>
-          <h2 className="mt-3 font-serif-display text-[#0F2A5E] text-4xl md:text-5xl leading-[1.05]">
+          <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl leading-[1.05]">
             À propos<br />de moi
           </h2>
-          <div className="mt-8 inline-block rounded-2xl bg-[#9F7CC4] text-white px-5 py-3 font-serif-display italic text-lg shadow-md">
-            {about.greeting}
+          <div className="mt-8 flex items-start gap-4">
+            <span className="mt-2 inline-block w-10 h-[2px] bg-[#C88AA0]" />
+            <p className="font-serif-display italic text-[#0F2A5E]/85 text-xl leading-snug max-w-xs">
+              {about.greeting}
+            </p>
           </div>
         </div>
         <div className="lg:col-span-7 space-y-5 fade-in-up">

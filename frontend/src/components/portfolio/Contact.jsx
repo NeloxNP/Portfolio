@@ -52,20 +52,16 @@ const Contact = () => {
   return (
     <section id="contact" ref={ref} className="relative py-24 md:py-32 overflow-hidden">
       <Waves variant="top" />
-      <div className="absolute -bottom-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#9F7CC4]/15 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-[420px] h-[420px] rounded-full bg-[#C88AA0]/15 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 fade-in-up">
-          <p className="text-[#9F7CC4] uppercase tracking-[0.25em] text-xs font-medium">
-            Section 05
-          </p>
-          <h2 className="mt-3 font-serif-display text-[#0F2A5E] text-4xl md:text-5xl leading-[1.05]">
+          <h2 className="font-serif-display text-[#0F2A5E] text-4xl md:text-5xl leading-[1.05]">
             On se parle&nbsp;?
           </h2>
           <p className="mt-5 text-[#0F2A5E]/80 text-base leading-relaxed max-w-md">
-            Je suis à la recherche d'un stage de 4 semaines au mois de juin.
-            Un projet, une question ou simplement envie d'échanger&nbsp;?
-            Écrivez-moi, je réponds à chaque message.
+            Contactez-moi pour mon stage de juin, pour me recruter, ou simplement
+            pour échanger autour d'un projet. Je réponds à chaque message.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -91,14 +87,14 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 p-4 rounded-2xl bg-white/75 backdrop-blur border border-[#0F2A5E]/10 hover:bg-white transition-colors"
             >
-              <span className="w-11 h-11 rounded-xl bg-[#9F7CC4] text-white grid place-items-center">
+              <span className="w-11 h-11 rounded-xl bg-[#C88AA0] text-white grid place-items-center">
                 <Linkedin size={18} />
               </span>
               <div>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-[#0F2A5E]/55">
                   LinkedIn
                 </div>
-                <div className="text-[#0F2A5E] font-medium group-hover:text-[#9F7CC4] transition-colors">
+                <div className="text-[#0F2A5E] font-medium group-hover:text-[#C88AA0] transition-colors">
                   /in/gabriel-anderlucci
                 </div>
               </div>
