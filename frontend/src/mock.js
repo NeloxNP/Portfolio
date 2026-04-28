@@ -45,7 +45,7 @@ export const projects = [
         {
           kind: "image",
           label: "Voir l'affiche",
-          subtitle: "Affiche officielle du salon",
+          subtitle: "Réalisée pour un concours",
           thumbnail: "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/p1q9bg1f_ANDERLUCCI_Gabriel-Affiche-1_page-0001.jpg",
           full: "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/p1q9bg1f_ANDERLUCCI_Gabriel-Affiche-1_page-0001.jpg",
         },
