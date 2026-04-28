@@ -1,0 +1,67 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  # Déclenche à chaque push sur la branche main
+  push:
+    branches:
+      - main
+  # Permet aussi de lancer manuellement depuis l'onglet "Actions" de GitHub
+  workflow_dispatch:
+
+# Permissions nécessaires pour publier sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Empêche deux déploiements en parallèle
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build du portfolio
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+          cache-dependency-path: frontend/yarn.lock
+
+      - name: Installation des dépendances
+        run: yarn install --frozen-lockfile
+
+      - name: Construction du site
+        env:
+          CI: false
+          DISABLE_ESLINT_PLUGIN: "true"
+        run: yarn build
+
+      - name: Préparation de GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Envoi de l'artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/build
+
+  deploy:
+    name: Déploiement
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publication sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
