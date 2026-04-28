@@ -7,6 +7,7 @@ export const profile = {
   location: "Arles, France",
   email: "gabriel.ander07@gmail.com",
   linkedin: "https://www.linkedin.com/in/gabriel-anderlucci-a010aa3a4",
+  cvVideo: "https://youtu.be/VW1ZUjuqGd4",
   initials: "GA",
   tagline: "Création audiovisuelle, design & communication.",
   available: "Stage de 4 semaines · Juin",
@@ -38,6 +39,25 @@ export const projects = [
       "Réalisation d'une affiche et d'un court-métrage promotionnel pour le Salon du Jeu Vidéo d'Arles. Direction artistique, tournage et montage.",
     tags: ["Affiche", "Court-métrage", "Direction artistique"],
     accent: "rose",
+    media: {
+      type: "choice",
+      options: [
+        {
+          kind: "image",
+          label: "Voir l'affiche",
+          subtitle: "Affiche officielle du salon",
+          thumbnail: "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/p1q9bg1f_ANDERLUCCI_Gabriel-Affiche-1_page-0001.jpg",
+          full: "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/p1q9bg1f_ANDERLUCCI_Gabriel-Affiche-1_page-0001.jpg",
+        },
+        {
+          kind: "video",
+          label: "Voir le court-métrage",
+          subtitle: "Sur YouTube",
+          thumbnail: "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/dk4nck37_image%20%282%29.png",
+          url: "https://youtu.be/NscMtnww6GQ?si=wk7Ag8nyn-KHfgVY",
+        },
+      ],
+    },
   },
   {
     id: "box-della-mamma",
@@ -49,6 +69,13 @@ export const projects = [
       "Création complète d'une marque fictive d'ApéroBox italienne : charte graphique, identité, page Instagram, campagne de financement participatif et stratégie marketing.",
     tags: ["Charte graphique", "Communication", "Marketing"],
     accent: "blue",
+    media: {
+      type: "gallery",
+      images: [
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/o3bkav1k_image.png",
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/ro4czuos_image%20%281%29.png",
+      ],
+    },
   },
   {
     id: "pokedexia",
@@ -60,6 +87,14 @@ export const projects = [
       "Un Pokédex interactif pour répertorier les Pokémon, consulter leurs types et leurs évolutions. Premier vrai projet de développement front-end.",
     tags: ["HTML", "CSS", "JavaScript"],
     accent: "blueDeep",
+    media: {
+      type: "gallery-link",
+      images: [
+        "https://placehold.co/1200x750/EAF3FB/0F2A5E?text=Pokedexia+%E2%80%93+Accueil&font=playfair-display",
+        "https://placehold.co/1200x750/DCE9F6/0F2A5E?text=Pokedexia+%E2%80%93+Fiche+Pok%C3%A9mon&font=playfair-display",
+      ],
+      cta: { label: "Visiter Pokedexia", url: "https://but-mmi.github.io/Pokedexia/" },
+    },
   },
   {
     id: "crousty-movies",
@@ -71,6 +106,13 @@ export const projects = [
       "Site dynamique pour répertorier des films, ajouter des commentaires, noter, voir les nouveautés et gérer la base depuis une interface admin.",
     tags: ["PHP", "SQL", "CSS"],
     accent: "rose",
+    media: {
+      type: "gallery",
+      images: [
+        "https://placehold.co/1200x750/EAF3FB/0F2A5E?text=Crousty+Movies+%E2%80%93+Catalogue&font=playfair-display",
+        "https://placehold.co/1200x750/DCE9F6/0F2A5E?text=Crousty+Movies+%E2%80%93+Fiche+Film&font=playfair-display",
+      ],
+    },
   },
   {
     id: "affiche-retro",
@@ -82,6 +124,12 @@ export const projects = [
       "Affiche rétro autour d'un Sony Walkman. Contraintes : aucune ombre, aplats de couleur uniquement et 6 couleurs maximum. Chaque détail compte.",
     tags: ["Illustration", "Aplats", "6 couleurs"],
     accent: "blue",
+    media: {
+      type: "gallery",
+      images: [
+        "https://customer-assets.emergentagent.com/job_my-portfolio-794/artifacts/91nz9a77_Affiche_vintage_ANDERLUCCI_page-0001%20%281%29.jpg",
+      ],
+    },
   },
   {
     id: "dark-patterns",
@@ -93,6 +141,10 @@ export const projects = [
       "De l'écriture du synopsis au montage final, en passant par le scénario et le tournage. Un projet complet pour s'exprimer par l'image.",
     tags: ["Synopsis", "Scénario", "Tournage", "Montage"],
     accent: "blueDeep",
+    media: {
+      type: "external",
+      url: "https://www.youtube.com/watch?v=WVj98bol2R0",
+    },
   },
 ];
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Mail, Linkedin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Linkedin, Send, CheckCircle2, Youtube } from "lucide-react";
 import { profile } from "../../mock";
 import Waves from "./Waves";
 import { useToast } from "../../hooks/use-toast";
@@ -101,6 +101,25 @@ const Contact = () => {
                   /in/gabriel-anderlucci
                 </div>
               </div>
+            </a>
+            <a
+              href={profile.cvVideo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 p-4 rounded-2xl bg-[#452573] text-white hover:bg-[#5B3589] transition-colors shadow-md"
+            >
+              <span className="w-11 h-11 rounded-xl bg-white/15 grid place-items-center">
+                <Youtube size={20} />
+              </span>
+              <div className="flex-1">
+                <div className="text-[10px] uppercase tracking-[0.2em] text-white/65">
+                  À découvrir
+                </div>
+                <div className="font-medium">Voir mon CV vidéo</div>
+              </div>
+              <span className="text-xs text-white/70 group-hover:translate-x-0.5 transition-transform">
+                ↗
+              </span>
             </a>
           </div>
         </div>
